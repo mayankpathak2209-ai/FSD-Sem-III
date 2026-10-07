@@ -11,7 +11,7 @@ function getuser(id, callback) {
 
         callback(null, user);
 
-    }, 1000);
+    }, 1000)
 }
 
 

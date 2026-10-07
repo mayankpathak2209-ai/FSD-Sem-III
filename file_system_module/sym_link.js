@@ -8,18 +8,33 @@ import fs from 'fs';
 //   console.log("Symbolic link created");
 // });
 
-fs.lstat("link.txt",(err,stats) => {
-    if(err){
-        console.log(err);
-        return;
-    }
-    console.log(stats.isSymbolicLink());
-})
+// fs.lstat("link.txt",(err,stats) => {
+//     if(err){
+//         console.log(err);
+//         return;
+//     }
+//     console.log(stats.isSymbolicLink());
+// })
 
-fs.rename("link.txt","new.txt",(err)=> {
-        if(err){
-            console.log(err)
-        } else {
-            console.log("renamed")
-        }
+// fs.rename("link.txt","new.txt",(err)=> {
+//         if(err){
+//             console.log(err)
+//         } else {
+//             console.log("renamed")
+//         }
+// })
+
+fs.truncate("new.txt", (err) => {
+  if (err) {
+    console.log(err);
+    return;
+  }
+  console.log("File truncated");
+});
+
+fs.unlink("new.txt",(err)=> {
+    if(err) {
+        console.log(err)
+    }
+    console.log("File deleted.")
 })
