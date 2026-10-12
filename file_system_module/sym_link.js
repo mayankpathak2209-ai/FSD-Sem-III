@@ -24,6 +24,11 @@ import fs from 'fs';
 //         }
 // })
 
+
+
+
+
+//FILE GETS TRUNCATED AND DELETED
 fs.truncate("new.txt", (err) => {
   if (err) {
     console.log(err);
